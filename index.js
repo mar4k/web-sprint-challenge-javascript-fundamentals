@@ -16,9 +16,10 @@ function myFunction() {
 //myFunction();
 
 //🚀🚀🚀 ⬇️ 📝 Explanation ⬇️ 📝 🚀🚀🚀: 
-
-
-
+/*
+The curly brackets of a fuction create a contained local scope within.  Outside functions cannot reach into that scope and access a variable within. 
+On the other hand, a given function can always reach outsie itself and access variables within the scope or scopes that contain it, including the global scope.  
+/*
 
 
 /* 🚀🚀🚀 Task 2: Counter 🚀🚀🚀 */
@@ -30,9 +31,12 @@ function myFunction() {
 💡 NOTE: you may use a for loop for this function if you wish 
 */
 
-function summation(/*Your Code Here*/) {
-  /*Your Code Here*/
-
+function summation(number) {
+  let counter = 0;
+  for(let i = 1; i < (number + 1); i++) {
+    counter = counter + i;
+  }
+    return counter;
   }
  
 
@@ -60,10 +64,16 @@ const zooAnimals = [
   💡 NOTE: the array returned should be an array of strings, and each string should follow this pattern: "name: {name}, scientific: {scientific name}"
   */
 
-  function animalNames(/*Your Code Here*/){
-    /*Your Code Here*/
-  }
-  
+  function animalNames(zooAnimals){
+    let displayNames = [];
+    zooAnimals.forEach(item => displayNames.push("name: " + item.animal_name + ", scientific: " + item.scientific_name));
+    return displayNames;
+    }
+    
+    
+
+
+
 
   /* 🦁🦁🦁 Request 2: .map() 🦁🦁🦁
   The zoo needs a list of all their animal's names converted to lower case. 
@@ -75,10 +85,17 @@ const zooAnimals = [
   💡 NOTE: Do some research for other methods that can help help you
   */
 
-  function lowerCaseNames(/*Your Code Here*/){
-    /*Your Code Here*/
-  }
+  function lowerCaseNames(zooAnimals){
+    
   
+    const lower = zooAnimals.map(item => `${item.animal_name.toLowerCase()}`)
+    
+    
+    return lower
+    }
+  
+
+console.log(lowerCaseNames(zooAnimals));
   
   /* 🦁🦁🦁 Request 3: .filter() 🦁🦁🦁
   The zoo is concerned about animals with a lower population count. 
